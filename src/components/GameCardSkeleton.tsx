@@ -6,7 +6,7 @@ interface GameCardSkeletonProps {
 }
 const GameCardSkeleton = () => {
   return (
-    <Card width="300px" borderRadius="4px" overflow="hidden">
+    <Card>
       <Skeleton height="200px" />
       <CardBody>
         <SkeletonText />
