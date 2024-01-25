@@ -16,7 +16,7 @@ import { Genre } from "./useGeners";
   }
 
 const useGames = ((selectedGenre: Genre | null) => useData<Game>("/games",
-{params: {genre: selectedGenre?.id}},
+{params: {genres: selectedGenre?.id}},
 [selectedGenre?.id])) ;
 
 export default useGames; 
