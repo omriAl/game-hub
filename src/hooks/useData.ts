@@ -7,12 +7,6 @@ interface FetchResponse<T> {
     results: T[];
   }
 
-  
-  export interface Genre {
-    id: number;
-    name: string;
-  }
-
 const useData = (<T>(endpoint:string) => {
     const controller = new AbortController() ;
     const [data, setData] = useState<T[]>([]);
