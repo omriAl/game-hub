@@ -1,9 +1,5 @@
-import { Card, CardBody, Skeleton, SkeletonText } from "@chakra-ui/react";
-import React from "react";
+import { Card, CardBody, Skeleton, SkeletonText } from '@chakra-ui/react'
 
-interface GameCardSkeletonProps {
-  isLoading: boolean;
-}
 const GameCardSkeleton = () => {
   return (
     <Card>
@@ -12,7 +8,7 @@ const GameCardSkeleton = () => {
         <SkeletonText />
       </CardBody>
     </Card>
-  );
-};
+  )
+}
 
-export default GameCardSkeleton;
+export default GameCardSkeleton

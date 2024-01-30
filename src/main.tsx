@@ -1,33 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
-import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
-import theme from "./theme";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import ms from "ms";
-const queryClient = new QueryClient({
-  // defaultOptions: {
-  //   queries: {
-  //     retry: 3,
-  //     cacheTime: 300_000, //5m
-  //     staleTime: ms("10s")
-  //     refetchOnWindowFocus: false,
-  //     refetchOnReconnect: false,
-  //     refetchOnMount: false,
-  //   },
-  // },
-});
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import App from './App'
+import theme from './theme'
+import './index.css'
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={theme}>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+    <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
+      <QueryClientProvider client={queryClient}>
         <App />
         <ReactQueryDevtools />
-      </ChakraProvider>
-    </QueryClientProvider>
-  </React.StrictMode>
-);
+      </QueryClientProvider>
+    </ChakraProvider>
+  </React.StrictMode>,
+)
