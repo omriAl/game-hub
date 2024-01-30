@@ -6,13 +6,13 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import ms from "ms";
 const queryClient = new QueryClient({
   // defaultOptions: {
   //   queries: {
   //     retry: 3,
   //     cacheTime: 300_000, //5m
-  //     staleTime: 10 * 1000, //10s
+  //     staleTime: ms("10s")
   //     refetchOnWindowFocus: false,
   //     refetchOnReconnect: false,
   //     refetchOnMount: false,
